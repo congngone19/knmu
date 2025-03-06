@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b60fc796.css",
+    "main.js": "/static/js/main.49d21faf.js",
+    "static/js/453.3f11bbe1.chunk.js": "/static/js/453.3f11bbe1.chunk.js",
+    "static/media/DFVN Bagel Fat One.ttf": "/static/media/DFVN Bagel Fat One.1f29d9a168b4eb62d78d.ttf",
+    "static/media/landing_page_2.jpg": "/static/media/landing_page_2.f7acd341d10be393f806.jpg",
+    "static/media/landing_page_1.jpg": "/static/media/landing_page_1.9215be5085e5300d2b82.jpg",
+    "static/media/landing_page_3.jpg": "/static/media/landing_page_3.9fb8dd490645dedbcfd0.jpg",
+    "index.html": "/index.html",
+    "main.b60fc796.css.map": "/static/css/main.b60fc796.css.map",
+    "main.49d21faf.js.map": "/static/js/main.49d21faf.js.map",
+    "453.3f11bbe1.chunk.js.map": "/static/js/453.3f11bbe1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b60fc796.css",
+    "static/js/main.49d21faf.js"
+  ]
+}
