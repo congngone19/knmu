@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'KhoiNguon';
+    src: url('DFVNBagelFatOne/DFVN\ Bagel\ Fat\ One.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: KhoiNguon;
+}
+
+.cus_container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.left {
+    width: 50%;
+    position: relative;
+    font-family: KhoiNguon;
+}
+
+.left .background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text_overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.text_overlay h2 {
+    font-size: 20px;
+    background: #ff6584;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.text_overlay h1 {
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+.right {
+    width: 50%;
+    background-color: #f7f3e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-family: KhoiNguon;
+}
+
+.right h3 {
+    font-size: 20px;
+    color: #ff6594;
+}
+
+.right .title {
+    font-size: 40px;
+    background: linear-gradient(to right, #6fd3f7, #5cbb5a);
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn.blue {
+    background-color: #2196f3;
+    color: white;
+}
+
+.btn.pink {
+    background-color: #ff6594;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
