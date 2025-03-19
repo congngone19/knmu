@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react
 import IndexPage from './IndexPage'
 import Login from "./Login";
 import Chat from "./Chat";
+import HomePage from "./HomePage";
 
 function App() {
   return (

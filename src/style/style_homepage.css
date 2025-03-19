@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'KhoiNguon', sans-serif;
+}
+
+.preLogo {
+    /* image 36 */
+    position: relative;
+    width: 714px;
+    height: 1154px;
+    left: -38px;
+    top: -28px;
+    background-color: black;
+}
