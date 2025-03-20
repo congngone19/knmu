@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import myStyle from './style/index.module.css';
-import preLogo from './style/preLogo.png';
+import preLogo from './style/IMG_0668.PNG';
 
 function IndexPage() {
     var navigate = useNavigate();
