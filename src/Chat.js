@@ -6,11 +6,14 @@ import BeKim from "./BeKim.json";
 import BeLam from "./BeLam.json";
 import BeSon from "./BeSon.json";
 import BeThanh from "./BeThanh.json";
+import beKim from "./style/characters/beKim.png";
+import beLam from "./style/characters/beLam.png";
+import beSon from "./style/characters/beSon.png";
+import beThanh from "./style/characters/beThanh.png";
 
 function Chat() {
     var { state } = useLocation();
     var [chatInput, setChatInput] = useState("");
-    var [generateChat, SetGenerateChat] = useState("Hello");
     var onChangeInput = function (e) {
         setChatInput(e.target.value);
     }
@@ -106,14 +109,76 @@ function Chat() {
         }
         return (<div ref={container} style={{ width: "100%" }} />);
     }
+    var getCharacter = function () {
+        if (state.user.character == "BeKim") {
+            return {
+                character: beKim,
+                "name": "Bé họ Kim",
+                "style": {
+                    width: "40%"
+                },
+                "story": {
+                    "profile": `Da rám nắng, tóc buộc cao, đôi mắt sáng rỡ mỗi khi nhìn thấy sách. Cô bé mê học, nhưng mẹ lại bảo con gái thì nên lo việc nhà hơn là cầm bút. Thế là thay vì ngồi ngay ngắn trên lớp, cô thường phải nghỉ học để nấu cơm, chăm em, ra đồng làm ruộng. Dù vậy, từng phút giây được học tập đều vô cùng quý giá.`,
+                    "diff": ""
+                }
+            }
+        } else if (state.user.character == "BeThanh") {
+            return {
+                character: beThanh,
+                "name": "Bé họ Thạch",
+                "style": {
+                    width: "50%"
+                },
+                "story": {
+                    "profile": `Bím tóc một bên, dáng người nhỏ con, hướng nội, có sở thích sưu tầm hoa phượng ở mỗi ngôi trường mình đi qua. Gia đình kinh tế khó khăn, ba mẹ thường xuyên đổi việc, đổi chỗ làm, cô bé phải chuyển trường liên tục, khiến em dần thu mình, ít chủ động trò chuyện với ai. Tuy đôi lúc thấy cô đơn, nhưng em vẫn luôn cố gắng theo đuổi việc học, vì mỗi ngôi trường là một hành trình mới.`,
+                    "diff": ""
+                }
+            }
+        } else if (state.user.character == "BeLam") {
+            return {
+                character: beLam,
+                "name": "Bé họ Lâm",
+                "style": {
+                    width: "50%"
+                },
+                "story": {
+                    "profile": `Gầy gầy, hiếu động, lúc nào cũng có một vết mực trên mặt. Sinh ra trong gia đình làm nông nên em chỉ có một cây bút chì cùn để học, nhưng em lại rất thích học môn Mỹ thuật và cực kỳ sáng tạo. Dù thiếu thốn, em vẫn không ngừng học tập và tin rằng chỉ cần có đam mê, mọi khó khăn đều có thể vượt qua.`,
+                    "diff": ""
+                }
+            }
+        } else {
+            return {
+                character: beSon,
+                "name": "Bé họ Sơn",
+                "style": {
+                    width: "50%"
+                },
+                "story": {
+                    "profile": `Nhỏ con, lanh lợi, môn nào học cũng giỏi nhưng cứ đến giờ chính tả là cuống cuồng. Từ nhỏ đã quen tiếp xúc với tiếng Khmer, nên khi vào cấp 1, cậu bé gặp không ít khó khăn với môn học này. Mỗi lần đọc bài trước lớp, em hồi hộp sợ viết sai, phát âm sai. Dù đôi lúc buồn vì bị trừ điểm, nhưng em vẫn kiên trì tìm cách chinh phục môn học này.`,
+                    "diff": ""
+                }
+            }
+        }
+    }
+    var onSelectButton = function (action) {
+        if (action == 1) {
+            SetGenerateChat(getCharacter()["story"]["profile"]);
+        } else {
+            SetGenerateChat("");
+        }
+    }
+    var [generateChat, SetGenerateChat] = useState(() => getCharacter()["story"]["profile"]);
     return (
         <div className={styles.cus_body}>
             <main>
                 <br /><br />
                 <section className={styles.top_bar}>
                     <div className={styles.character_info}>
-                        <img src="background.jpg" alt="Nhân vật" />
-                        <span className={styles.character_name}>{state.user.name} - {state.user.character}</span>
+                        <div className={styles.character_frame}>
+                            {/* <img src="background.jpg" alt="Nhân vật" /> */}
+                            <img src={getCharacter()["character"]} style={getCharacter()["style"]} />
+                            <div className={styles.character_name}>{state.user.name} - {state.user.character}</div>
+                        </div>
                     </div>
                     <h1 className={styles.page_title}>TRANG GIỮ CHUỖI</h1>
                     <div className={styles.menu}>
@@ -126,10 +191,21 @@ function Chat() {
                         <div className="col-sm-3">
                             <Character name={state.user.character} />
                         </div>
-                        <div className="col-sm-9">
+                        <div className="col-sm-7">
                             <pre className={styles.ChatContent}>
                                 {generateChat}
                             </pre>
+                        </div>
+                        <div className="col-sm-2" >
+                            <div className={styles.buttons} style={{ padding: "10px" }}>
+                                <button className={`${styles.btn} ${styles.pink}`} onClick={() => onSelectButton(1)}>Profile</button>
+                            </div>
+                            <div className={styles.buttons} style={{ padding: "10px" }}>
+                                <button className={`${styles.btn} ${styles.blue}`} onClick={() => onSelectButton(0)}>Khó Khăn</button>
+                            </div>
+                            <div className={styles.buttons} style={{ padding: "10px" }}>
+                                <button className={`${styles.btn} ${styles.orange}`} onClick={() => onSelectButton(0)}>Sử dụng thẻ trợ giúp</button>
+                            </div>
                         </div>
                     </div>
                 </section>
