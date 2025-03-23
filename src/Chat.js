@@ -236,7 +236,7 @@ Sự nỗ lực của các em, cùng sự hỗ trợ từ cộng đồng và sin
                             <div className={styles.character_name}>{state.user.name} - {state.user.character}</div>
                         </div>
                     </div>
-                    <h1 className={styles.page_title}>TRANG GIỮ CHUỖI</h1>
+                    <h1 className={styles.page_title}>EM MER</h1>
                     <div className={styles.menu}>
                         <img className={styles.chain_count} src="Logo-KhoiNguonMerUoc.png" alt="Khởi nguồn mơ ước" style={{ width: "25%", marginLeft: "70%" }} />
                     </div>
