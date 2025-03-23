@@ -18,34 +18,26 @@ function Chat() {
     var onChangeInput = function (e) {
         setChatInput(e.target.value);
     }
-    var generateAI = async function () {
-        if (chatInput.trim() != "") {
-            var data = [
-                {
-                    "sessionId": state.user.name,
-                    "action": "sendMessage",
-                    "chatInput": chatInput
-                }
-            ];
-            try {
-                var result = await fetch("https://inneduu.app.n8n.cloud/webhook/2d076a54-9ede-4d84-acf5-4db3253611cb", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "innedu": "innedu"
-                    },
-                    body: JSON.stringify(data),
-                }).then(response => {
-                    return response.text();
+    var generateAI = async function (message) {
+        var data = message;
+        try {
+            var result = await fetch("https://i-am-congngo.app.n8n.cloud/webhook/2fc680da-91c5-4786-833d-a11e06e2f32b", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "ngonc": "ngonc"
+                },
+                body: JSON.stringify(data),
+            }).then(response => {
+                return response.text();
+            })
+                .then(data => {
+                    return data;
                 })
-                    .then(data => {
-                        return data;
-                    })
-                    .catch(error => console.error("Error fetching data:", error));
-                SetGenerateChat(result);
-            } catch (error) {
-                console.error("Error:", error);
-            }
+                .catch(error => console.error("Error fetching data:", error));
+            SetGenerateChat(result);
+        } catch (error) {
+            console.error("Error:", error);
         }
     }
     function Character(props) {
@@ -189,13 +181,39 @@ Tính cách: Hay mắc cỡ nhưng rất lanh.
             }
         }
     }
-    var onSelectButton = function (action) {
+    var onSelectButton = async function (action) {
         if (action == 1) {
             SetGenerateChat(getCharacter()["story"]["profile"]);
         } else if (action == 2) {
             SetGenerateChat(getCharacter()["story"]["diff"]);
-        }else{
-            console.log(myCard)
+        } else {
+            var message = {
+                "profile": getCharacter()["story"]["profile"],
+                "diff": getCharacter()["story"]["diff"],
+                "card": getCard()
+            }
+            await generateAI(message);
+        }
+    }
+    var getCard = function () {
+        if (myCard["nhanuoc"] == "Đã sử dụng") {
+            return `
+Miễn/giảm học phí và hỗ trợ học bổng 🎓
+Cải thiện cơ sở vật chất trường học 🏫
+Tổ chức lớp học song ngữ, bảo tồn văn hóa Khmer 
+            `;
+        }
+        if (myCard["giaovien"] == "Đã sử dụng") {
+            return `
+Được hỗ trợ giảng dạy tận tình 🎓
+Cung cấp tài liệu và lớp học bổ trợ 📖
+Định hướng tương lai, truyền động lực 🌟
+            `;
+        }
+        if (myCard["cohoi"] == "Đã sử dụng") {
+            return `
+Sự nỗ lực của các em, cùng sự hỗ trợ từ cộng đồng và sinh viên, mở ra cơ hội để vươn lên trong học tập và cuộc sống.
+            `;
         }
     }
     var [generateChat, SetGenerateChat] = useState(() => getCharacter()["story"]["profile"]);
