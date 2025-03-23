@@ -10,6 +10,7 @@ import beKim from "./style/characters/beKim.png";
 import beLam from "./style/characters/beLam.png";
 import beSon from "./style/characters/beSon.png";
 import beThanh from "./style/characters/beThanh.png";
+import Card from './Card';
 
 function Chat() {
     var { state } = useLocation();
@@ -118,8 +119,15 @@ function Chat() {
                     width: "40%"
                 },
                 "story": {
-                    "profile": `Da rám nắng, tóc buộc cao, đôi mắt sáng rỡ mỗi khi nhìn thấy sách. Cô bé mê học, nhưng mẹ lại bảo con gái thì nên lo việc nhà hơn là cầm bút. Thế là thay vì ngồi ngay ngắn trên lớp, cô thường phải nghỉ học để nấu cơm, chăm em, ra đồng làm ruộng. Dù vậy, từng phút giây được học tập đều vô cùng quý giá.`,
-                    "diff": ""
+                    "diff":
+                        `
+Da rám nắng, tóc buộc cao, đôi mắt sáng rỡ mỗi khi nhìn thấy sách. Cô bé mê học, nhưng mẹ lại bảo con gái thì nên lo việc nhà hơn là cầm bút. Thế là thay vì ngồi ngay ngắn trên lớp, cô thường phải nghỉ học để nấu cơm, chăm em, ra đồng làm ruộng. Dù vậy, từng phút giây được học tập đều vô cùng quý giá. Gặp khó khăn về định kiến nhất. Bên cạnh đó còn gặp phải khó khăn về Kinh tế và rào cản ngôn ngữ. Gặp khó khăn về kinh tế nhất. Bên cạnh đó, còn gặp phải khó khăn về ngôn ngữ và định kiến
+                        `,
+                    "profile": `
+Giới tính: Nữ 
+Đặc điểm ngoại hình: Da rám nắng, tóc buộc cao, gọn gàng, má lúm đồng tiền.
+Tính cách: Ngoan ngoãn, mạnh mẽ, tháo vát, "thấy sách là mắt sáng rỡ"
+                    `
                 }
             }
         } else if (state.user.character == "BeThanh") {
@@ -130,8 +138,15 @@ function Chat() {
                     width: "50%"
                 },
                 "story": {
-                    "profile": `Bím tóc một bên, dáng người nhỏ con, hướng nội, có sở thích sưu tầm hoa phượng ở mỗi ngôi trường mình đi qua. Gia đình kinh tế khó khăn, ba mẹ thường xuyên đổi việc, đổi chỗ làm, cô bé phải chuyển trường liên tục, khiến em dần thu mình, ít chủ động trò chuyện với ai. Tuy đôi lúc thấy cô đơn, nhưng em vẫn luôn cố gắng theo đuổi việc học, vì mỗi ngôi trường là một hành trình mới.`,
-                    "diff": ""
+                    "diff":
+                        `
+Bím tóc một bên, dáng người nhỏ con, hướng nội, có sở thích sưu tầm hoa phượng ở mỗi ngôi trường mình đi qua. Gia đình kinh tế khó khăn, ba mẹ thường xuyên đổi việc, đổi chỗ làm, cô bé phải chuyển trường liên tục, khiến em dần thu mình, ít chủ động trò chuyện với ai. Tuy đôi lúc thấy cô đơn, nhưng em vẫn luôn cố gắng theo đuổi việc học, vì mỗi ngôi trường là một hành trình mới.
+                        `,
+                    "profile": `
+Giới tính: Nữ 
+Đặc điểm ngoại hình: Bím tóc 1 bên
+Tính cách: Nhẹ nhàng, tinh tế, hay mơ mộng. Nhìn ít nói nhưng khi thân thì nói siêu nhiều
+                    `
                 }
             }
         } else if (state.user.character == "BeLam") {
@@ -142,8 +157,15 @@ function Chat() {
                     width: "50%"
                 },
                 "story": {
-                    "profile": `Gầy gầy, hiếu động, lúc nào cũng có một vết mực trên mặt. Sinh ra trong gia đình làm nông nên em chỉ có một cây bút chì cùn để học, nhưng em lại rất thích học môn Mỹ thuật và cực kỳ sáng tạo. Dù thiếu thốn, em vẫn không ngừng học tập và tin rằng chỉ cần có đam mê, mọi khó khăn đều có thể vượt qua.`,
-                    "diff": ""
+                    "diff":
+                        `
+Gầy gầy, hiếu động, lúc nào cũng có một vết mực trên mặt. Sinh ra trong gia đình làm nông nên em chỉ có một cây bút chì cùn để học, nhưng em lại rất thích học môn Mỹ thuật và cực kỳ sáng tạo. Dù thiếu thốn, em vẫn không ngừng học tập và tin rằng chỉ cần có đam mê, mọi khó khăn đều có thể vượt qua. Gặp khó khăn về kinh tế nhất. Bên cạnh đó, còn gặp phải khó khăn về định kiến và rào cản ngôn ngữ
+                        `,
+                    "profile": `
+Giới tính: Nam 
+Đặc điểm ngoại hình: Gầy gầy, hiếu động 
+Tính cách: Ham học hỏi, thông minh, luôn nghĩ ra những cách "chữa cháy" cực kỳ sáng tạo
+                    `
                 }
             }
         } else {
@@ -154,8 +176,15 @@ function Chat() {
                     width: "50%"
                 },
                 "story": {
-                    "profile": `Nhỏ con, lanh lợi, môn nào học cũng giỏi nhưng cứ đến giờ chính tả là cuống cuồng. Từ nhỏ đã quen tiếp xúc với tiếng Khmer, nên khi vào cấp 1, cậu bé gặp không ít khó khăn với môn học này. Mỗi lần đọc bài trước lớp, em hồi hộp sợ viết sai, phát âm sai. Dù đôi lúc buồn vì bị trừ điểm, nhưng em vẫn kiên trì tìm cách chinh phục môn học này.`,
-                    "diff": ""
+                    "diff":
+                        `
+Nhỏ con, lanh lợi, môn nào học cũng giỏi nhưng cứ đến giờ chính tả là cuống cuồng. Từ nhỏ đã quen tiếp xúc với tiếng Khmer, nên khi vào cấp 1, cậu bé gặp không ít khó khăn với môn học này. Mỗi lần đọc bài trước lớp, em hồi hộp sợ viết sai, phát âm sai. Dù đôi lúc buồn vì bị trừ điểm, nhưng em vẫn kiên trì tìm cách chinh phục môn học này. Gặp khó khăn rào cản ngôn ngữ nhất. Bên cạnh đó, còn khó khăn về Kinh tế và gặp phải định kiến
+                        `,
+                    "profile": `
+Giới tính: Nam  
+Ngoại hình: Nhỏ con, tròn tròn, khuôn mặt lém lỉnh
+Tính cách: Hay mắc cỡ nhưng rất lanh.
+                    `
                 }
             }
         }
@@ -163,11 +192,18 @@ function Chat() {
     var onSelectButton = function (action) {
         if (action == 1) {
             SetGenerateChat(getCharacter()["story"]["profile"]);
-        } else {
-            SetGenerateChat("");
+        } else if (action == 2) {
+            SetGenerateChat(getCharacter()["story"]["diff"]);
+        }else{
+            console.log(myCard)
         }
     }
     var [generateChat, SetGenerateChat] = useState(() => getCharacter()["story"]["profile"]);
+    var [myCard, setMyCard] = useState({
+        "nhanuoc": "Sử dụng",
+        "giaovien": "Sử dụng",
+        "cohoi": "Sử dụng"
+    })
     return (
         <div className={styles.cus_body}>
             <main>
@@ -201,10 +237,10 @@ function Chat() {
                                 <button className={`${styles.btn} ${styles.pink}`} onClick={() => onSelectButton(1)}>Profile</button>
                             </div>
                             <div className={styles.buttons} style={{ padding: "10px" }}>
-                                <button className={`${styles.btn} ${styles.blue}`} onClick={() => onSelectButton(0)}>Khó Khăn</button>
+                                <button className={`${styles.btn} ${styles.blue}`} onClick={() => onSelectButton(2)}>Khó Khăn</button>
                             </div>
                             <div className={styles.buttons} style={{ padding: "10px" }}>
-                                <button className={`${styles.btn} ${styles.orange}`} onClick={() => onSelectButton(0)}>Sử dụng thẻ trợ giúp</button>
+                                <button className={`${styles.btn} ${styles.orange}`} onClick={() => onSelectButton(0)}>Dự đoán nghề nghiệp</button>
                             </div>
                         </div>
                     </div>
@@ -214,7 +250,7 @@ function Chat() {
 
             <footer>
                 <div className='row'>
-                    <div className="col-sm-9">
+                    {/* <div className="col-sm-9">
                         <input type="text" name="name" className={styles.question} id="nme" required autocomplete="off" value={chatInput} onChange={onChangeInput} />
                         <label for="nme"><span>What's your name?</span></label>
                     </div>
@@ -222,6 +258,15 @@ function Chat() {
                         <div className={styles.buttons}>
                             <button className={`${styles.btn} ${styles.pink}`} onClick={generateAI}>Hỏi đáp</button>
                         </div>
+                    </div> */}
+                    <div className='col-sm-4'>
+                        <Card card={{ title: "Thẻ Power - Nhà nước", type: "nhanuoc", status: "Sử dụng", myCard: myCard, setMyCard: setMyCard }} />
+                    </div>
+                    <div className='col-sm-4'>
+                        <Card card={{ title: "Thẻ Power - Giáo viên", type: "giaovien", status: "Sử dụng", myCard: myCard, setMyCard: setMyCard }} />
+                    </div>
+                    <div className='col-sm-4'>
+                        <Card card={{ title: "Thẻ cơ hội", type: "cohoi", status: "Sử dụng", myCard: myCard, setMyCard: setMyCard }} />
                     </div>
                 </div>
             </footer>

@@ -3,6 +3,7 @@ import IndexPage from './IndexPage'
 import Login from "./Login";
 import Chat from "./Chat";
 import HomePage from "./HomePage";
+import Card from "./Card";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<IndexPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/card" element={<Card />} />
       </Routes>
     </Router>
   );
