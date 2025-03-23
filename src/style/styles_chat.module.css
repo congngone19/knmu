@@ -201,6 +201,9 @@ main {
     padding: 5px;
     text-wrap: inherit;
     max-height: 30vh;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 input,
