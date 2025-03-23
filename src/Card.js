@@ -27,22 +27,16 @@ function Card(props) {
     }
     var onChangeCard = function () {
         if (props.card.type == "nhanuoc") {
-            props.card.setMyCard({
-                "nhanuoc": "Đã sử dụng",
-                "giaovien": "Sử dụng",
-                "cohoi": "Sử dụng"
+            props.card.setMyCard((curent) => {
+                return { ...curent, "nhanuoc": "Đã sử dụng" }
             });
         } else if (props.card.type == "giaovien") {
-            props.card.setMyCard({
-                "nhanuoc": "Sử dụng",
-                "giaovien": "Đã sử dụng",
-                "cohoi": "Sử dụng"
+            props.card.setMyCard((curent) => {
+                return { ...curent, "giaovien": "Đã sử dụng" }
             });
         } else {
-            props.card.setMyCard({
-                "nhanuoc": "Sử dụng",
-                "giaovien": "Sử dụng",
-                "cohoi": "Đã sử dụng"
+            props.card.setMyCard((curent) => {
+                return { ...curent, "cohoi": "Đã sử dụng" }
             });
         }
     }

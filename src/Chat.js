@@ -35,7 +35,7 @@ function Chat() {
                     return data;
                 })
                 .catch(error => console.error("Error fetching data:", error));
-            SetGenerateChat(result);
+            SetGenerateChat(result.replaceAll("*", "").replaceAll("###","-"));
         } catch (error) {
             console.error("Error:", error);
         }
@@ -113,12 +113,10 @@ function Chat() {
                 "story": {
                     "diff":
                         `
-Da rám nắng, tóc buộc cao, đôi mắt sáng rỡ mỗi khi nhìn thấy sách. Cô bé mê học, nhưng mẹ lại bảo con gái thì nên lo việc nhà hơn là cầm bút. Thế là thay vì ngồi ngay ngắn trên lớp, cô thường phải nghỉ học để nấu cơm, chăm em, ra đồng làm ruộng. Dù vậy, từng phút giây được học tập đều vô cùng quý giá. Gặp khó khăn về định kiến nhất. Bên cạnh đó còn gặp phải khó khăn về Kinh tế và rào cản ngôn ngữ. Gặp khó khăn về kinh tế nhất. Bên cạnh đó, còn gặp phải khó khăn về ngôn ngữ và định kiến
+Gặp khó khăn về định kiến nhất. Bên cạnh đó còn gặp phải khó khăn về Kinh tế và rào cản ngôn ngữ. Gặp khó khăn về kinh tế nhất. Bên cạnh đó, còn gặp phải khó khăn về ngôn ngữ và định kiến
                         `,
                     "profile": `
-Giới tính: Nữ 
-Đặc điểm ngoại hình: Da rám nắng, tóc buộc cao, gọn gàng, má lúm đồng tiền.
-Tính cách: Ngoan ngoãn, mạnh mẽ, tháo vát, "thấy sách là mắt sáng rỡ"
+Da rám nắng, tóc buộc cao, đôi mắt sáng rỡ mỗi khi nhìn thấy sách. Cô bé mê học, nhưng mẹ lại bảo con gái thì nên lo việc nhà hơn là cầm bút. Thế là thay vì ngồi ngay ngắn trên lớp, cô thường phải nghỉ học để nấu cơm, chăm em, ra đồng làm ruộng. Dù vậy, từng phút giây được học tập đều vô cùng quý giá.
                     `
                 }
             }
@@ -132,12 +130,10 @@ Tính cách: Ngoan ngoãn, mạnh mẽ, tháo vát, "thấy sách là mắt sán
                 "story": {
                     "diff":
                         `
-Bím tóc một bên, dáng người nhỏ con, hướng nội, có sở thích sưu tầm hoa phượng ở mỗi ngôi trường mình đi qua. Gia đình kinh tế khó khăn, ba mẹ thường xuyên đổi việc, đổi chỗ làm, cô bé phải chuyển trường liên tục, khiến em dần thu mình, ít chủ động trò chuyện với ai. Tuy đôi lúc thấy cô đơn, nhưng em vẫn luôn cố gắng theo đuổi việc học, vì mỗi ngôi trường là một hành trình mới.
+Gặp khó khăn về kinh tế nhất. Bên cạnh đó, còn gặp phải khó khăn về ngôn ngữ và định kiến
                         `,
                     "profile": `
-Giới tính: Nữ 
-Đặc điểm ngoại hình: Bím tóc 1 bên
-Tính cách: Nhẹ nhàng, tinh tế, hay mơ mộng. Nhìn ít nói nhưng khi thân thì nói siêu nhiều
+Bím tóc một bên, dáng người nhỏ con, hướng nội, có sở thích sưu tầm hoa phượng ở mỗi ngôi trường mình đi qua. Gia đình kinh tế khó khăn, ba mẹ thường xuyên đổi việc, đổi chỗ làm, cô bé phải chuyển trường liên tục, khiến em dần thu mình, ít chủ động trò chuyện với ai. Tuy đôi lúc thấy cô đơn, nhưng em vẫn luôn cố gắng theo đuổi việc học, vì mỗi ngôi trường là một hành trình mới.
                     `
                 }
             }
@@ -151,12 +147,10 @@ Tính cách: Nhẹ nhàng, tinh tế, hay mơ mộng. Nhìn ít nói nhưng khi 
                 "story": {
                     "diff":
                         `
-Gầy gầy, hiếu động, lúc nào cũng có một vết mực trên mặt. Sinh ra trong gia đình làm nông nên em chỉ có một cây bút chì cùn để học, nhưng em lại rất thích học môn Mỹ thuật và cực kỳ sáng tạo. Dù thiếu thốn, em vẫn không ngừng học tập và tin rằng chỉ cần có đam mê, mọi khó khăn đều có thể vượt qua. Gặp khó khăn về kinh tế nhất. Bên cạnh đó, còn gặp phải khó khăn về định kiến và rào cản ngôn ngữ
+Gặp khó khăn về kinh tế nhất. Bên cạnh đó, còn gặp phải khó khăn về định kiến và rào cản ngôn ngữ
                         `,
                     "profile": `
-Giới tính: Nam 
-Đặc điểm ngoại hình: Gầy gầy, hiếu động 
-Tính cách: Ham học hỏi, thông minh, luôn nghĩ ra những cách "chữa cháy" cực kỳ sáng tạo
+Gầy gầy, hiếu động, lúc nào cũng có một vết mực trên mặt. Sinh ra trong gia đình làm nông nên em chỉ có một cây bút chì cùn để học, nhưng em lại rất thích học môn Mỹ thuật và cực kỳ sáng tạo. Dù thiếu thốn, em vẫn không ngừng học tập và tin rằng chỉ cần có đam mê, mọi khó khăn đều có thể vượt qua.
                     `
                 }
             }
@@ -170,12 +164,10 @@ Tính cách: Ham học hỏi, thông minh, luôn nghĩ ra những cách "chữa 
                 "story": {
                     "diff":
                         `
-Nhỏ con, lanh lợi, môn nào học cũng giỏi nhưng cứ đến giờ chính tả là cuống cuồng. Từ nhỏ đã quen tiếp xúc với tiếng Khmer, nên khi vào cấp 1, cậu bé gặp không ít khó khăn với môn học này. Mỗi lần đọc bài trước lớp, em hồi hộp sợ viết sai, phát âm sai. Dù đôi lúc buồn vì bị trừ điểm, nhưng em vẫn kiên trì tìm cách chinh phục môn học này. Gặp khó khăn rào cản ngôn ngữ nhất. Bên cạnh đó, còn khó khăn về Kinh tế và gặp phải định kiến
+Gặp khó khăn rào cản ngôn ngữ nhất. Bên cạnh đó, còn khó khăn về Kinh tế và gặp phải định kiến
                         `,
                     "profile": `
-Giới tính: Nam  
-Ngoại hình: Nhỏ con, tròn tròn, khuôn mặt lém lỉnh
-Tính cách: Hay mắc cỡ nhưng rất lanh.
+Nhỏ con, lanh lợi, môn nào học cũng giỏi nhưng cứ đến giờ chính tả là cuống cuồng. Từ nhỏ đã quen tiếp xúc với tiếng Khmer, nên khi vào cấp 1, cậu bé gặp không ít khó khăn với môn học này. Mỗi lần đọc bài trước lớp, em hồi hộp sợ viết sai, phát âm sai. Dù đôi lúc buồn vì bị trừ điểm, nhưng em vẫn kiên trì tìm cách chinh phục môn học này.
                     `
                 }
             }
@@ -192,29 +184,39 @@ Tính cách: Hay mắc cỡ nhưng rất lanh.
                 "diff": getCharacter()["story"]["diff"],
                 "card": getCard()
             }
+            console.log(message)
             await generateAI(message);
         }
     }
     var getCard = function () {
+        var count = 0;
+        var cardContent = "";
         if (myCard["nhanuoc"] == "Đã sử dụng") {
-            return `
+            count++;
+            cardContent += `
+${count}.
 Miễn/giảm học phí và hỗ trợ học bổng 🎓
 Cải thiện cơ sở vật chất trường học 🏫
 Tổ chức lớp học song ngữ, bảo tồn văn hóa Khmer 
             `;
         }
         if (myCard["giaovien"] == "Đã sử dụng") {
-            return `
+            count++;
+            cardContent += `
+${count}.
 Được hỗ trợ giảng dạy tận tình 🎓
 Cung cấp tài liệu và lớp học bổ trợ 📖
 Định hướng tương lai, truyền động lực 🌟
             `;
         }
         if (myCard["cohoi"] == "Đã sử dụng") {
-            return `
+            count++;
+            cardContent += `
+${count}.
 Sự nỗ lực của các em, cùng sự hỗ trợ từ cộng đồng và sinh viên, mở ra cơ hội để vươn lên trong học tập và cuộc sống.
             `;
         }
+        return cardContent;
     }
     var [generateChat, SetGenerateChat] = useState(() => getCharacter()["story"]["profile"]);
     var [myCard, setMyCard] = useState({
