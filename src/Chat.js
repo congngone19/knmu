@@ -21,7 +21,7 @@ function Chat() {
     var generateAI = async function (message) {
         var data = message;
         try {
-            var result = await fetch("https://i-am-congngo.app.n8n.cloud/webhook/2fc680da-91c5-4786-833d-a11e06e2f32b", {
+            var result = await fetch("https://ngoncse160065.app.n8n.cloud/webhook/2fc680da-91c5-4786-833d-a11e06e2f32b", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
